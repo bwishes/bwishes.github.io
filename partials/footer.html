@@ -1,0 +1,16 @@
+<div class="share-btn animated" ng-class="shareBoxFlag ? 'flipInY' : 'flipInX'">
+  <a ng-click="shareBoxFlag = !shareBoxFlag">
+    <div class="share"><i class="icon-share"></i></div>
+  </a>
+</div>
+<div class="share-box animated" ng-class="shareBoxFlag ? 'bounceInRight' : 'bounceOutRight'">
+  <a href="{{wishes.whatsapp}}">
+    <div class="share whatsapp"><i class="icon-whatsapp"></i></div>
+  </a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u={{wishes.facebook}}" target="_blank">
+    <div class="share facebook"><i class="icon-facebook"></i></div>
+  </a>
+</div>
+<div class="back-btn " ui-sref="create">
+  <button>Create</button>
+</div>
