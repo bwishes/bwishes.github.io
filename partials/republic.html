@@ -2,11 +2,25 @@
   <div ng-include="'partials/header.html'"></div>
 </div>
 <div class="container-body republic has-header has-footer">
-  <div class="page animated bounceInLeft">
+  <div class="page animated rotateIn">
     <div class="wisher">{{wishes.to | uppercase}}</div>
     <div class="wishing">{{wishes.wishing}}</div>
     <div class="event" ng-if="wishes.adv == 1"><small>Advance</small></div>
     <div class="event">{{wishes.event}}</div>
+    <div class="graphics">
+      <div class="flag">
+        <div class="saffron flag-item"></div>
+        <div class="white flag-item">
+          <div class="circle">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            <span class="bar"></span><span class="bar"></span>
+          </div>
+        </div>
+        <div class="green flag-item"></div>
+        <div class="flag-wave"></div>
+      </div>
+    </div>
     <div class="quotes">{{wishes.quotes}}
       <div>- <strong>{{wishes.from}}</strong></div>
     </div>
