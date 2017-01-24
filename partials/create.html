@@ -18,18 +18,24 @@
         <option value="newyear">New Year</option>
         <option value="pongal">Pongal</option>
         <option value="republic">Republic Day</option>
-        <option value="valentine">Valentines Day</option>
+        <option value="valentines">Valentines Day</option>
         <option value="custom">Custom</option>
       </select>
-      <input type="text" placeholder="Event" maxlength="30" ng-model="wishes.customEvent" ng-trim="false" no-spec-char-field="wishes.customEvent" ng-show="wishes.event == 'custom'" />
-      <div>
-        <input type="checkbox" ng-model="wishes.adv" ng-true-value="1" ng-false-value="0" /> I want to wish in advance
+      <div ng-show="wishes.event != 'republic'">
+        <p>Want to create a {{wishes.event}} wish? Download our app from playstore.</p>
+        <a href='https://goo.gl/prWoyc'><img alt='Get it on Google Play' src='./img/googleplay.png' class="playstore animated infinite pulse" /></a>
       </div>
-      <input type="text" placeholder="Wishes from" ng-model="wishes.from" ng-trim="false" maxlength="15" restrict-field="wishes.from" required />
-      <input type="text" placeholder="Wishes to" ng-model="wishes.to" ng-trim="false" maxlength="15" restrict-field="wishes.to" required />
-      <textarea ng-model="wishes.quotes" ng-show="wishes.event == 'custom'" ng-trim="false" no-spec-char-field="wishes.quotes" placeholder="Message/quote" maxlength="300"></textarea>
-      <button>Create</button>
-      <p ng-show="wishes.event == 'custom'">Note: Custom creations will be cleared after 7 days from the day of creation.</p>
+      <div ng-hide="wishes.event != 'republic'">
+        <input type="text" placeholder="Event" maxlength="30" ng-model="wishes.customEvent" ng-trim="false" no-spec-char-field="wishes.customEvent" ng-show="wishes.event == 'custom'" />
+        <div>
+          <input type="checkbox" ng-model="wishes.adv" ng-true-value="1" ng-false-value="0" /> I want to wish in advance
+        </div>
+        <input type="text" placeholder="Wishes from" ng-model="wishes.from" ng-trim="false" maxlength="15" restrict-field="wishes.from" required />
+        <input type="text" placeholder="Wishes to" ng-model="wishes.to" ng-trim="false" maxlength="15" restrict-field="wishes.to" required />
+        <textarea ng-model="wishes.quotes" ng-show="wishes.event == 'custom'" ng-trim="false" no-spec-char-field="wishes.quotes" placeholder="Message/quote" maxlength="300"></textarea>
+        <button>Create</button>
+        <p ng-show="wishes.event == 'custom'">Note: Custom creations will be cleared after 7 days from the day of creation.</p>
+      </div>
     </form>
   </div>
 </div>
